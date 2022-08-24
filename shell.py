@@ -22,9 +22,10 @@ m2 = Mentor.objects.create(name='Halil Nurmuhametov', email='halil@gmail.com', p
                            main_work='University of Fort Collins', experience='2010-09-18'
                            )
 
-m2.course = Course.objects.create(name=l)
-m2.students.set([s1, s2], through_defaults={'name': 'Python 21', 'language': l1,
-                                            'date_started':'2022-08-01'})
 
-m1.students.set(s3, through_defaults={'name': 'Python 21', 'language': l1,
+m2.students.set([s1, s2], through_defaults={'name': 'Python 21', 'language': l1,
+                                            'date_started': '2022-08-01'})
+
+
+m1.students.add(s3, through_defaults={'name': 'Python 21', 'language': l1,
                                       'date_started': '2022-08-01'})

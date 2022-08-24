@@ -24,8 +24,8 @@ class AbstractPerson(models.Model):
 
     def save(self, *args, **kwargs):
         for i in self.phone_number:
-            if i == 0:
-                i = '+'
+            if i == '0':
+                i = '+996'
         super().save(*args, **kwargs)
 
     def __str__(self):

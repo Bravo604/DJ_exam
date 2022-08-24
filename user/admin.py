@@ -4,10 +4,10 @@ from .models import *
 
 @admin.register(Mentor)
 class MentorAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone_number', 'main_work', 'experience','get_level')
+    list_display = ('name', 'main_work', 'phone_number', 'get_level')
     search_fields = ('name',)
     list_filter = ('students',)
-    fields = ('name', 'work_study_place', 'phone_number')
+    fields = ('name', 'work_study_place', 'phone_number', )
 
     @admin.display(description='Level')
     def get_level(self, obj):
